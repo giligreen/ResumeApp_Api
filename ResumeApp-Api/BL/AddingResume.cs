@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace BL
 {
-    class AddingResume
+   static class AddingResume
     {
 
         public static void BuildNewResume(string path)
