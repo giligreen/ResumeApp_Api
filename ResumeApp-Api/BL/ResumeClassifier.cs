@@ -8,9 +8,10 @@ namespace BL
     class ResumeClassifier
     {
 
-        public static string classifyResume(Resume r)
+        public static string ClassifyResume(Resume r)
         {
             //שליחה לעץ החלטה
+            
             
             r.Class = "none";
             return "none";

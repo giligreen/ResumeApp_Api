@@ -5,4 +5,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Aspose.Words" Version="22.5.0" />
+    <PackageReference Include="ClosedXML" Version="0.95.4" />
+    <PackageReference Include="ClosedXML_Excel" Version="1.0.0" />
+  </ItemGroup>
+
 </Project>

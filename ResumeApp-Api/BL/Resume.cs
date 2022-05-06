@@ -39,8 +39,9 @@ namespace BL
             {
                 if (this.WordArr.Any(x => x == pair.Key))
                 {
-                    //???לבדןק 
+                    //???   זה או זה לבדןק 
                     this.AttributesValues.Add(pair.Key, 1);
+                    this.AttributesValues[pair.Key] = 1;
                 }
 
             }

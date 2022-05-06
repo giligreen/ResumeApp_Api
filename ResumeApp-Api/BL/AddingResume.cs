@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Aspose.Words;
+using ClosedXML.Excel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,17 +11,26 @@ namespace BL
 {
    static class AddingResume
     {
-
-        public static void BuildNewResume(string path)
+        public static Resume BuildNewResume(string path)
         {
             Resume r = new Resume(path);
             string newPath = ConvertFileToTextFile(path);
             r.WordArr = DividingFileIntoWords(newPath).ToArray();
             r.FillDictionary();
-            ResumeClassifier.classifyResume(r);
-
-
+            ResumeClassifier.ClassifyResume(r);
+            return r;
         }
+        public static void SaveResumeInDB(Resume r)
+        {
+            string DB_Path = @"DataBase.xlsx";
+            var wbook = new XLWorkbook(DB_Path);
+            var ws = wbook.Worksheet(1);
+            int row = ws.RowsUsed().Count() + 1;
+            ws.Cell(row, 1).SetValue<string>(r.Path);
+            ws.Cell(row, 2).SetValue<string>(r.Class); 
+            wbook.Save();
+        }
+
 
 
 
@@ -30,7 +41,6 @@ namespace BL
         /// <returns>נתיב לקובץ הטקסט החדש</returns>
         public static string ConvertFileToTextFile(String FilePath)
         {
-
             var doc = new Document("my-files/Resume database/" + FilePath);
             string newPath = "my-files/text files/" + Path.GetFileNameWithoutExtension(FilePath) + ".txt";
             doc.Save(newPath);
