@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using BL;
+using System.Net.Http;
+using Microsoft.AspNetCore.Http;
 
 
 
@@ -50,24 +53,64 @@ namespace ResumeApp_Api.Controllers
 
 
         // PUT api/<controller>/
-        [HttpPut("api/[controller]")]
-        //public void UploadResume(FileStream f)
+        [HttpPost("api/[controller]/UploadResume")]
+        public void UploadResume()
+        {
+
+            //שמירת הקובץ עצמו בשרת
+            string path = "";
+            Resume r = AddingResume.BuildNewResume(path);
+            //DB - שמירה בקובץ ה
+            AddingResume.SaveResumeInDB(r);
+        }
+
+
+        //[HttpPost("api/[controller]/UploadResume")]
+        //public async Task<IActionResult> UploadResumeAsync([FromForm] IFormFile file)
         //{
-        //    //שמירת הקובץ עצמו בשרת
-        //    string path;
-        //  // BL.Resume r= BL.AddingResume.BuildNewResume(path);
-        //    //DB - שמירה בקובץ ה 
-        //   // BL.AddingResume.SaveResumeInDB(r);
+        //    if (file == null || file.Length == 0)
+        //    {
+        //        return BadRequest();
+        //    }
+
+        //   //ReturnsVariable returnsV = new ReturnsVariable();
+
+
+        //    using (var memoryStream = new MemoryStream())
+        //    {
+        //        await file.CopyToAsync(memoryStream);
+        //        using (var image = Image.FromStream(memoryStream))
+        //        {
+        //            returnsV = manager.FunctionManager(image);
+
+        //            if (returnsV.flg)
+        //            {
+
+        //                return Ok(ColorsListString);
+        //            }
+        //        }
+        //        return BadRequest();
+        //    }
         //}
 
-        //GET api/<controller>/5
-        [HttpGet("{subject}")]
-        public File[] SearchBySubject(string subject)
-        { 
-            File[] files = BL.SearchBySubject(subject);
-               return files;
-       }
-        
+
+
+        ////GET api/<controller>/5
+        //[HttpGet("{subject}")]
+        //public File[] SearchBySubject(string subject)
+        //{
+        //    File[] files = BL.SearchBySubject(subject);
+        //    return files;
+        //}
+
+
+
+        //GET api/<controller>
+        [HttpGet]
+        public string SearchBySubject()
+        {
+            return "aaaa";
+        }
 
     }
 }

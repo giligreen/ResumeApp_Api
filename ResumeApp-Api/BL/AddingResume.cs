@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 
 namespace BL
 {
-   static class AddingResume
+   public static class AddingResume
     {
         public static Resume BuildNewResume(string path)
         {

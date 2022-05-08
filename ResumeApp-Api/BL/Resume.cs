@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    class Resume
+    public class Resume
     {
         public string Path { get; set; }
         public string Class { get; set; }

@@ -45,3 +45,15 @@ M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\ResumeApp-
 M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\ResumeApp-Api\bin\Debug\netcoreapp3.1\DocumentFormat.OpenXml.dll
 M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\ResumeApp-Api\bin\Debug\netcoreapp3.1\ExcelNumberFormat.dll
 M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\ResumeApp-Api\bin\Debug\netcoreapp3.1\System.IO.Packaging.dll
+M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\ResumeApp-Api\bin\Debug\netcoreapp3.1\Aspose.Words.Pdf2Word.dll
+M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\ResumeApp-Api\bin\Debug\netcoreapp3.1\Aspose.Words.dll
+M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\ResumeApp-Api\bin\Debug\netcoreapp3.1\SkiaSharp.dll
+M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\ResumeApp-Api\bin\Debug\netcoreapp3.1\runtimes\osx\native\libSkiaSharp.dylib
+M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\ResumeApp-Api\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\libSkiaSharp.dll
+M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\ResumeApp-Api\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\libSkiaSharp.dll
+M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\ResumeApp-Api\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\libSkiaSharp.dll
+M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\ResumeApp-Api\obj\Debug\netcoreapp3.1\ResumeApp-Api.csproj.CoreCompileInputs.cache
+M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\ResumeApp-Api\obj\Debug\netcoreapp3.1\ResumeApp-Api.MvcApplicationPartsAssemblyInfo.cache
+M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\ResumeApp-Api\bin\Debug\netcoreapp3.1\BL.exe
+M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\ResumeApp-Api\bin\Debug\netcoreapp3.1\BL.dll
+M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\ResumeApp-Api\bin\Debug\netcoreapp3.1\BL.pdb

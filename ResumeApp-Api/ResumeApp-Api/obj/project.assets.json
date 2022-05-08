@@ -1460,6 +1460,21 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "BL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Aspose.Words": "22.5.0",
+          "ClosedXML": "0.95.4",
+          "ClosedXML_Excel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BL.dll": {}
+        }
       }
     }
   },
@@ -5296,11 +5311,17 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "BL/1.0.0": {
+      "type": "project",
+      "path": "../BL/BL.csproj",
+      "msbuildProject": "../BL/BL.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Aspose.Words >= 22.5.0",
+      "BL >= 1.0.0",
       "ClosedXML >= 0.95.4",
       "ClosedXML_Excel >= 1.0.0"
     ]
@@ -5330,7 +5351,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "M:\\פרוייקט\\GIT פרוייקט עם\\ResumeApp_Api\\ResumeApp-Api\\BL\\BL.csproj": {
+              "projectPath": "M:\\פרוייקט\\GIT פרוייקט עם\\ResumeApp_Api\\ResumeApp-Api\\BL\\BL.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

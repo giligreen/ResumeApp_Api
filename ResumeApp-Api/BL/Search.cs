@@ -1,6 +1,10 @@
-﻿using System;
+﻿using Aspose.Words;
+using ClosedXML.Excel;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+
 
 
 namespace BL
@@ -16,15 +20,15 @@ namespace BL
             List<Document> files = new List<Document>();
             for (int i = 2; i <= ws.RowsUsed().Count(); i++)
             {
-                if (ws.cell(i,2)==subject)
+                if (ws.Cell(i,2).ToString()==subject)
                 {
-                    var doc = new Document(ws.cell(i, 2).ToString());
+                    var doc = new Document(ws.Cell(i, 2).ToString());
                     files.Add(doc);
 
                 }
             }
-            
-            ws.Save();
+
+            wbook.Save();
             return files;
         }
 
