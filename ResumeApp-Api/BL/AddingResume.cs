@@ -22,7 +22,7 @@ namespace BL
         }
         public static void SaveResumeInDB(Resume r)
         {
-            string DB_Path = @"DataBase.xlsx";
+            string DB_Path = @"M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\ResumeApp-Api\my_files\DataBase.xlsx";
             var wbook = new XLWorkbook(DB_Path);
             var ws = wbook.Worksheet(1);
             int row = ws.RowsUsed().Count() + 1;
@@ -41,8 +41,8 @@ namespace BL
         /// <returns>נתיב לקובץ הטקסט החדש</returns>
         public static string ConvertFileToTextFile(String FilePath)
         {
-            var doc = new Document("my-files/Resume database/" + FilePath);
-            string newPath = "my-files/text files/" + Path.GetFileNameWithoutExtension(FilePath) + ".txt";
+            var doc = new Document(FilePath);
+            string newPath = Path.GetFileNameWithoutExtension(FilePath) + ".txt";
             doc.Save(newPath);
             return newPath;
         }

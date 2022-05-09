@@ -1,5 +1,4 @@
 M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\bin\Debug\netcoreapp3.1\BL.exe
-M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\obj\Debug\netcoreapp3.1\BL.csprojAssemblyReference.cache
 M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\obj\Debug\netcoreapp3.1\BL.AssemblyInfoInputs.cache
 M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\obj\Debug\netcoreapp3.1\BL.AssemblyInfo.cs
 M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\bin\Debug\netcoreapp3.1\Spire.Common.dll
@@ -32,3 +31,4 @@ M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\bin\Deb
 M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\obj\Debug\netcoreapp3.1\BL.dll
 M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\obj\Debug\netcoreapp3.1\BL.pdb
 M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\obj\Debug\netcoreapp3.1\BL.genruntimeconfig.cache
+M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\obj\Debug\netcoreapp3.1\BL.csprojAssemblyReference.cache
