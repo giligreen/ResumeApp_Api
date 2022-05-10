@@ -12,7 +12,7 @@ namespace BL
         public string Path { get; set; }
         public string Class { get; set; }
         public string[] WordArr { get; set; }
-        public  IDictionary<string,int> AttributesValuesDict { get; set; }
+        public IDictionary<string, int> AttributesValuesDict { get; set; }
 
 
         public Resume()
@@ -28,10 +28,17 @@ namespace BL
             var wbook = new XLWorkbook(@"M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\Model\DecisionTree.xlsx");
             var db = wbook.Worksheet(1);
             var rows = db.RowsUsed().Count();
-            for (int i = 2; i <= 10; i++)
+            for (int i = 2; i < rows; i++)
             {
-                string word = db.Cell(i, 2).GetValue<string>();
-                AttributesValuesDict.Add(word, 0);
+                if (!db.Cell(i, 4).GetBoolean())
+                {
+                    string word = db.Cell(i, 2).GetValue<string>();
+                    if (!AttributesValuesDict.ContainsKey(word))
+                    {
+                        AttributesValuesDict.Add(word, 0);
+                    }
+
+                }
             }
 
         }
@@ -47,18 +54,16 @@ namespace BL
         /// </summary>
         public void FillDictionary()
         {
-            foreach (var pair in this.AttributesValuesDict)
+            List<string> keys = new List<string>(AttributesValuesDict.Keys);
+            foreach (string key in keys)
             {
-                if (this.WordArr.Any(x => x == pair.Key))
+
+                if (this.WordArr.Any(x => x == key))
                 {
-                   
-                  
-                    this.AttributesValuesDict[pair.Key] = 1;
+                    this.AttributesValuesDict[key] = 1;
                 }
 
             }
         }
-
-
     }
 }

@@ -1,0 +1,32 @@
+﻿
+Evaluation Only. Created with Aspose.Words. Copyright 2003-2022 Aspose Pty Ltd.
+Chan XChan -X -
+F F
+D D
+P P
+בס"ד
+Click to buy NOW! re.co m TEXT Click to buy NOW! re.co m
+כיתוב -
+softwa softwa
+Single מומלץ להשתמש רק ב Multiline text/ Single line text פקודה זו מאפשרת כתיבת מלל משני סוגים שונים line text
+לפני הכתיבה יש לערוך סגנונות טקסט המתאימים לעברית , כותרות ומספרים ( אנגלית)
+m.shx סגנון כתב לעברית מסתיים בסיומת
+עריכת סגנון כתב
+ ST קיצור מקלדת
+הפעלת הפקודה
+הקשת ST אנטר, ונפתחת חלונית.או בחוצץ TEXT ,ANNOTATE בחץ הקטן 
+OKנגדיר את הגדרות הכיתוב ו
+
+כתיבה
+DT קיצור מקלדת
+הפעלת הפקודה:
+SINGLE LINE TEXT ,TEXT ,ANNOTATE אנטר, או בחוצץ DT הקשת ·
+· לחיצה על המסך למיקום הטקסט
+· הקשת הגובה הרצוי ( אם לא הוגדר בסגנון ) ואנטר
+· הקשת הזוית הרצויה ואנטר
+· כתיבה...
+· אנטר פעמיים לסיום
+הערה: יש לבחור את סוג הכתב בגלגלת הסגנונות לפני הכתיבה.
+.מאפשרת להעתיק סגנון כתב מאחד לשני MA
+Propertiesניתן לערוך את המלל ע"י לחיצה כפולה על הטקסט, או באמצעות ה
+Created with an evaluation copy of Aspose.Words. To discover the full versions of our APIs please visit: https://products.aspose.com/words/

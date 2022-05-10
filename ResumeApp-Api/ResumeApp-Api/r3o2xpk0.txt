@@ -1,0 +1,8 @@
+﻿
+Evaluation Only. Created with Aspose.Words. Copyright 2003-2022 Aspose Pty Ltd.
+http://csharp.net-informations.com/excel/csharp-read-excel.htm
+
+https://stackoverflow.com/questions/66458071/read-write-excel-file-without-installing-anything
+
+
+Created with an evaluation copy of Aspose.Words. To discover the full versions of our APIs please visit: https://products.aspose.com/words/
