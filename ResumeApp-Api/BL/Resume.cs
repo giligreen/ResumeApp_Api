@@ -12,7 +12,7 @@ namespace BL
         public string Path { get; set; }
         public string Class { get; set; }
         public string[] WordArr { get; set; }
-        public IDictionary<string, int> AttributesValuesDict { get; set; }
+        public IDictionary<string, string> AttributesValuesDict { get; set; }
 
 
         public Resume()
@@ -23,7 +23,7 @@ namespace BL
         public Resume(string path)
         {
             Path = path;
-            AttributesValuesDict = new Dictionary<string, int>();
+            AttributesValuesDict = new Dictionary<string, string>();
             //הוספת התכונות בעץ למילון יחד עם הערך 0  כרגע
             var wbook = new XLWorkbook(@"M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\Model\DecisionTree.xlsx");
             var db = wbook.Worksheet(1);
@@ -35,7 +35,7 @@ namespace BL
                     string word = db.Cell(i, 2).GetValue<string>();
                     if (!AttributesValuesDict.ContainsKey(word))
                     {
-                        AttributesValuesDict.Add(word, 0);
+                        AttributesValuesDict.Add(word, "0");
                     }
 
                 }
@@ -60,7 +60,7 @@ namespace BL
 
                 if (this.WordArr.Any(x => x == key))
                 {
-                    this.AttributesValuesDict[key] = 1;
+                    this.AttributesValuesDict[key] = "1";
                 }
 
             }

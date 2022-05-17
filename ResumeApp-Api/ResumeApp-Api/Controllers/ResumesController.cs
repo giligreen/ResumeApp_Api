@@ -8,12 +8,9 @@ using BL;
 using System.Net.Http;
 using Microsoft.AspNetCore.Http;
 using System.Drawing;
+using Aspose.Words;
 
 
-
-
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace ResumeApp_Api.Controllers
 {
@@ -54,29 +51,17 @@ namespace ResumeApp_Api.Controllers
         }
 
 
-        ////GET api/<controller>/5
-        //[HttpGet("{subject}")]
-        //public File[] SearchBySubject(string subject)
-        //{
-        //    File[] files = BL.SearchBySubject(subject);
-        //    return files;
-        //}
-
-
-
-        //GET api/<controller>
-        [HttpGet]
-        public string STAM()
+        //GET api/<controller>/5
+        [HttpGet("{subject}")]
+        public string SearchBySubject(string subject)
         {
-            return "aaaa";
+            string files = BL.Search.SearchBySubject(subject);
+
+            return files;
         }
 
-       
-        [HttpPost]
-        public string SearchBySubject([FromHeader]string data)
-        {
-            return "aaaa";
-        }
+
+
 
     }
 }

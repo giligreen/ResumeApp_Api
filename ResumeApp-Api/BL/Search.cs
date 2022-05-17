@@ -9,27 +9,29 @@ using System.Text;
 
 namespace BL
 {
-    class Search
+   public class Search
     {
 
-        public static List<Document> SearchBySubject(string subject)
+        public static string SearchBySubject(string subject)
         {
-            string DB_Path = @"DataBase.xlsx";
+            string sss="";
+            string DB_Path = @"my_files\DataBase.xlsx";
             var wbook = new XLWorkbook(DB_Path);
             var ws = wbook.Worksheet(1);
             List<Document> files = new List<Document>();
             for (int i = 2; i <= ws.RowsUsed().Count(); i++)
             {
-                if (ws.Cell(i,2).ToString()==subject)
+                if (ws.Cell(i,2).GetValue<string>()==subject)
                 {
-                    var doc = new Document(ws.Cell(i, 2).ToString());
+                    var doc = new Document(ws.Cell(i, 1).GetValue<string>());
                     files.Add(doc);
+                    sss=ws.Cell(i, 1).GetValue<string>();
 
                 }
             }
 
             wbook.Save();
-            return files;
+            return sss;
         }
 
 

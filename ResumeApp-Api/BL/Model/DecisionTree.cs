@@ -10,6 +10,7 @@ namespace BL
 {
     public class DecisionTree
     {
+        static bool valueFound = false;
         public TreeNode Root { get; set; }
         
         
@@ -84,10 +85,8 @@ namespace BL
         /// <param name="valuesForQuery"> מילון עם ערכי התכונות של קורות החיים לסיווג - 0 או 1 לכל מילה</param>
         /// <param name="result">הסיווג - מתעדכן במהלך הרקורסיה</param>
         /// <returns></returns>
-        public static string CalculateResult(TreeNode root, IDictionary<string, int> valuesForQuery, string result)
+        public static string CalculateResult(TreeNode root, IDictionary<string, string> valuesForQuery, string result)
         {
-            var valueFound = false;
-
             result += root.Name.ToUpper() + " -- ";
 
             if (root.IsLeaf)
@@ -99,9 +98,11 @@ namespace BL
             {
                 foreach (var childNode in root.ChildNodes)
                 {
+                    
                     foreach (var entry in valuesForQuery)
                     {
-                        if (childNode.Edge.ToUpper().Equals(entry.Value) && root.Name.ToUpper().Equals(entry.Key.ToUpper()))
+                        
+                        if (childNode!=null && childNode.Edge.ToUpper().Equals(entry.Value) && root.Name.ToUpper().Equals(entry.Key.ToUpper()))
                         {
                             valuesForQuery.Remove(entry.Key);
 
@@ -157,8 +158,8 @@ namespace BL
         {
             var isLeaf = true;
             var allEndValues = new List<string>();
-
-            // get all leaf values for the attribute in question
+            
+            // קבל את כל ערכי העלים עבור התכונה המדוברת
             for (var i = 0; i < data.Rows.Count; i++)
             {
                 if (data.Rows[i][root.TableIndex].ToString().Equals(attributeToCheck))
@@ -167,13 +168,13 @@ namespace BL
                 }
             }
 
-            // check whether all elements of the list have the same value
+            // בדוק אם לכל הרכיבים ברשימה יש אותו ערך
             if (allEndValues.Count > 0 && allEndValues.Any(x => x != allEndValues[0]))
             {
                 isLeaf = false;
             }
 
-            // create leaf with value to display and edge to the leaf
+            // צור עלה עם הערך 
             if (isLeaf)
             {
                 root.ChildNodes.Add(new TreeNode(true, allEndValues[0], attributeToCheck));
