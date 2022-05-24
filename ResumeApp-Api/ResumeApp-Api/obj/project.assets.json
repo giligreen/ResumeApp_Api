@@ -1467,13 +1467,29 @@
         "dependencies": {
           "Aspose.Words": "22.5.0",
           "ClosedXML": "0.95.4",
-          "ClosedXML_Excel": "1.0.0"
+          "ClosedXML_Excel": "1.0.0",
+          "DAL": "1.0.0"
         },
         "compile": {
           "bin/placeholder/BL.dll": {}
         },
         "runtime": {
           "bin/placeholder/BL.dll": {}
+        }
+      },
+      "DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Aspose.Words": "22.5.0",
+          "ClosedXML": "0.95.4",
+          "ClosedXML_Excel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DAL.dll": {}
         }
       }
     }
@@ -5316,6 +5332,11 @@
       "type": "project",
       "path": "../BL/BL.csproj",
       "msbuildProject": "../BL/BL.csproj"
+    },
+    "DAL/1.0.0": {
+      "type": "project",
+      "path": "../DAL/DAL.csproj",
+      "msbuildProject": "../DAL/DAL.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5323,7 +5344,8 @@
       "Aspose.Words >= 22.5.0",
       "BL >= 1.0.0",
       "ClosedXML >= 0.95.4",
-      "ClosedXML_Excel >= 1.0.0"
+      "ClosedXML_Excel >= 1.0.0",
+      "DAL >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5354,6 +5376,9 @@
           "projectReferences": {
             "M:\\פרוייקט\\GIT פרוייקט עם\\ResumeApp_Api\\ResumeApp-Api\\BL\\BL.csproj": {
               "projectPath": "M:\\פרוייקט\\GIT פרוייקט עם\\ResumeApp_Api\\ResumeApp-Api\\BL\\BL.csproj"
+            },
+            "M:\\פרוייקט\\GIT פרוייקט עם\\ResumeApp_Api\\ResumeApp-Api\\DAL\\DAL.csproj": {
+              "projectPath": "M:\\פרוייקט\\GIT פרוייקט עם\\ResumeApp_Api\\ResumeApp-Api\\DAL\\DAL.csproj"
             }
           }
         }

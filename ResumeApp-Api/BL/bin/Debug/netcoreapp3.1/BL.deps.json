@@ -10,7 +10,8 @@
         "dependencies": {
           "Aspose.Words": "22.5.0",
           "ClosedXML": "0.95.4",
-          "ClosedXML_Excel": "1.0.0"
+          "ClosedXML_Excel": "1.0.0",
+          "DAL": "1.0.0"
         },
         "runtime": {
           "BL.dll": {}
@@ -876,6 +877,16 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0"
         }
+      },
+      "DAL/1.0.0": {
+        "dependencies": {
+          "Aspose.Words": "22.5.0",
+          "ClosedXML": "0.95.4",
+          "ClosedXML_Excel": "1.0.0"
+        },
+        "runtime": {
+          "DAL.dll": {}
+        }
       }
     }
   },
@@ -1507,6 +1518,11 @@
       "sha512": "sha512-5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
+    },
+    "DAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

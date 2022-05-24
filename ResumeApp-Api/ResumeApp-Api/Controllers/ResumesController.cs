@@ -9,8 +9,7 @@ using System.Net.Http;
 using Microsoft.AspNetCore.Http;
 using System.Drawing;
 using Aspose.Words;
-
-
+using DAL;
 
 namespace ResumeApp_Api.Controllers
 {
@@ -23,9 +22,7 @@ namespace ResumeApp_Api.Controllers
         public async Task<IActionResult> UploadingResumeAsync(IFormFile file)
         {
             if (file==null||file.Length <= 0)
-                return BadRequest("Empty file");
-
-            
+                return BadRequest("Empty file");       
             //הסר כל מפרטי נתיב 
             var originalFileName = Path.GetFileName(file.FileName);
 
@@ -40,10 +37,7 @@ namespace ResumeApp_Api.Controllers
             {
                 await file.CopyToAsync(stream);
             }
-
-           
             Resume r = AddingResume.BuildNewResume(uniqueFilePath);
-
             //////DB - שמירה בקובץ ה
             AddingResume.SaveResumeInDB(r);
            return Ok($"Saved file {originalFileName} with size {file.Length / 1024m:#.00} KB, using unique name {uniqueFilePath}");
@@ -51,13 +45,21 @@ namespace ResumeApp_Api.Controllers
         }
 
 
-        //GET api/<controller>/5
+        
         [HttpGet("{subject}")]
         public string SearchBySubject(string subject)
         {
-            string files = BL.Search.SearchBySubject(subject);
-
+            string files = Search.SearchBySubject(subject);
             return files;
+        }
+
+     
+        [HttpGet("download")]
+        public IActionResult DownloadResume()
+        {
+            byte[] byteArray = System.IO.File.ReadAllBytes(@"M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\ResumeApp-Api\my_files\0f1soscv.pdf");
+            
+            return new FileContentResult(byteArray, "application/pdf");
         }
 
 

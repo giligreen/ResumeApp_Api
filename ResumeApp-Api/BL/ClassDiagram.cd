@@ -1,2 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BL.GlobalData">
+    <Position X="6.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GlobalData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BL.Resume">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAIAAAIAAAAAAAAAAAAAAAAAAAAAAAk=</HashCode>
+      <FileName>Resume.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BL.ResumeClassifier">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ResumeClassifier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BL.AddingResume">
+    <Position X="2.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAgAAAAAAAAAQCAgAAAAA=</HashCode>
+      <FileName>AddingResume.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL.Search">
+    <Position X="7" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DAL.ResumeHandler">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

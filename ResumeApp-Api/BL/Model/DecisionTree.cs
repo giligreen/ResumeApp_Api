@@ -79,16 +79,17 @@ namespace BL
 
 
         /// <summary>
-        /// (predict() פונקציה שמסווגת נתון חדש - קורות חיים חדש, לפי עץ ההחלטה שהיא מקבלת (בפייתון - הפונקציה  
+        ///  פונקציה שמסווגת נתון חדש - קורות חיים חדש, לפי עץ ההחלטה שהיא מקבלת    
+        /// predict()בפייתון הפונקציה
         /// </summary>
         /// <param name="root">עץ ההחלטה</param>
         /// <param name="valuesForQuery"> מילון עם ערכי התכונות של קורות החיים לסיווג - 0 או 1 לכל מילה</param>
         /// <param name="result">הסיווג - מתעדכן במהלך הרקורסיה</param>
         /// <returns></returns>
-        public static string CalculateResult(TreeNode root, IDictionary<string, string> valuesForQuery, string result)
+        public static string CalculateResult
+           (TreeNode root, IDictionary<string, string> valuesForQuery, string result)
         {
             result += root.Name.ToUpper() + " -- ";
-
             if (root.IsLeaf)
             {
                 result = root.Edge.ToLower() + " --> " + root.Name.ToUpper();
@@ -97,26 +98,24 @@ namespace BL
             else
             {
                 foreach (var childNode in root.ChildNodes)
-                {
-                    
+                {  
                     foreach (var entry in valuesForQuery)
                     {
-                        
-                        if (childNode!=null && childNode.Edge.ToUpper().Equals(entry.Value) && root.Name.ToUpper().Equals(entry.Key.ToUpper()))
+                        if (childNode!=null && childNode.Edge.ToUpper().Equals(entry.Value) &&
+                            root.Name.ToUpper().Equals(entry.Key.ToUpper()))
                         {
                             valuesForQuery.Remove(entry.Key);
 
-                            return result + CalculateResult(childNode, valuesForQuery, $"{childNode.Edge.ToLower()} --> ");
+                            return result +
+                                CalculateResult(childNode, valuesForQuery, $"{childNode.Edge.ToLower()} --> ");
                         }
                     }
                 }
             }
-
             if (!valueFound)
             {
                 result = "Attribute not found";
             }
-
             return result;
         }
 
@@ -126,16 +125,9 @@ namespace BL
         /// </summary>
         /// <param name="data">טבלה של הנתונים</param>
         /// <param name="edgeName">ערך התכונה שהובילה לצומת הנוכחית - בפעם הראשונה - אין משמעות לנתון זה</param>
-        /// <returns></returns>
         public static TreeNode Learn(DataTable data, string edgeName)
         {
-            if (data.Columns.Count == 2)
-            {
-                Console.WriteLine("בדיקה");
-            }
-            
                 var root = GetRootNode(data, edgeName);
-
                 foreach (var item in root.NodeAttribute.DifferentAttributeNames)
                 {
                     // אם זה עלה, העלה יתווסף בפונקציה זו
@@ -149,7 +141,6 @@ namespace BL
                         root.ChildNodes.Add(Learn(reducedTable, item));
                     }
                 }
-          
             return root;
         }
 
@@ -190,18 +181,20 @@ namespace BL
         /// <param name="data">טבלת הנתונים</param>
         /// <param name="edgePointingToNextNode"> לפיצול הבא Attribute שם הקשת - שם מסויים בתוך ה</param>
         /// <param name="rootTableIndex">   Attribute - האינדקס של העמודה בטבלה   - </param>
-        /// <returns>edgePointingToNextNodeטבלה קטנה יותר שמכילה רק את השורות בהם הערך בעמודה שהתקבלה שווה לערך ה</returns>
+        /// <returns>  טבלה קטנה יותר שמכילה רק את השורות בהם הערך בעמודה שהתקבלה 
+        ///            edgePointingToNextNode שווה לערך ה
+        /// </returns>
         private static DataTable CreateSmallerTable(DataTable data, string edgePointingToNextNode, int rootTableIndex)
         {
             var smallerData = new DataTable();
 
-            // add column titles
+            // הוסף כותרות עמודות
             for (var i = 0; i < data.Columns.Count; i++)
             {
                 smallerData.Columns.Add(data.Columns[i].ToString());
             }
 
-            // add rows which contain edgePointingToNextNode to new datatable
+           // הוסף שורות המכילות את הערך הרצויבעמודה שנבחרה לטבלת נתונים חדשה
             for (var i = 0; i < data.Rows.Count; i++)
             {
                 if (data.Rows[i][rootTableIndex].ToString().Equals(edgePointingToNextNode))
@@ -217,7 +210,7 @@ namespace BL
                 }
             }
 
-            // remove column which was already used as node            
+            // הסר עמודה שכבר שימשה כצומת         
             smallerData.Columns.Remove(smallerData.Columns[rootTableIndex]);
 
             return smallerData;
@@ -256,11 +249,8 @@ namespace BL
                     highestInformationGainIndex = i;
                 }
             }
-            if (highestInformationGainIndex<0)
-            {
-                Console.WriteLine("aaa");
-            }
-            return new TreeNode(attributes[highestInformationGainIndex].Name, highestInformationGainIndex, attributes[highestInformationGainIndex], edge);
+            return new TreeNode(attributes[highestInformationGainIndex].Name,
+                                highestInformationGainIndex, attributes[highestInformationGainIndex], edge);
         }
 
 
@@ -289,7 +279,7 @@ namespace BL
                 var fifthDivision = item[0, 5] / (double)item[0, 0];
                 var sixthDivision = item[0, 6] / (double)item[0, 0];
 
-                // prevent dividedByZeroException
+                // מניעת חלוקה ב - 0
                 stepsForCalculation.Add(
                           (firstDivision == 0 ? 0 : -firstDivision * Math.Log(firstDivision, 2))
                         - (secondDivision == 0 ? 0 : secondDivision * Math.Log(secondDivision, 2))
@@ -300,7 +290,8 @@ namespace BL
                         );
             }
 
-            var gain = stepsForCalculation.Select((t, i) => amountForDifferentValue[i][0, 0] / (double)totalRows * t).Sum();
+            var gain = stepsForCalculation.Select
+                ((t, i) => amountForDifferentValue[i][0, 0] / (double)totalRows * t).Sum();
 
             gain = entropyOfDataset - gain;
 

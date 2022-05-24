@@ -25,13 +25,15 @@ namespace BL
             DifferentAttributeNames = differentAttributenames;
         }
 
+        //מציאת מספר הערכים השונים בעמודה – בתכונה מסויימת 
         public static List<string> GetDifferentAttributeValuesOfColumn(DataTable data, int columnIndex)
         {
             var differentAttributes = new List<string>();
 
             for (var i = 0; i < data.Rows.Count; i++)
             {
-                var found = differentAttributes.Any(t => t.ToUpper().Equals(data.Rows[i][columnIndex].ToString().ToUpper()));
+                var found = differentAttributes.Any(t => t.ToUpper()
+                .Equals(data.Rows[i][columnIndex].ToString().ToUpper()));
 
                 if (!found)
                 {

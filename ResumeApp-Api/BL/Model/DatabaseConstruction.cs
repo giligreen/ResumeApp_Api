@@ -185,29 +185,29 @@ namespace BL
                 wbook.Save();
             }
         }
-     
-        
-        
-        
+
+
+
+
+
         /// <summary>
-       ///DataTable פונקציה שמקבלת נתיב לקובץ ובונה ממנו 
-       /// </summary>
-       /// <param name="CSVFile">csv נתיב לקובץ</param>
-       /// <returns> עם כל הנתונים dataTable</returns>
+        ///  DataBase פונקציה שמקבלת נתיב לקובץ ממלאה אותו ובונה     
+        /// </summary>
+        /// <param name="DataBaseForClassification_ExcelFile">  excel נתיב לקובץ</param>
         public static void FillInDataBase(string DataBaseForClassification_ExcelFile)
         {
-
             string pathesDataBase = @"my-files\PathesDataBase.xlsx";
-            Resume[] resumes =BuildResumesObjects(pathesDataBase);
+            Resume[] resumes = BuildResumesObjects(pathesDataBase);
             foreach (var item in resumes)
             {
                 string newPath = ConvertFileToTextFile(item.Path);
-               // List<string> words = DividingFileIntoWords(newPath);
-               // string[] wordsArray = words.ToArray();
-               // FeelExcelWithNewResumeWords(DataBaseForClassification_ExcelFile, wordsArray, item.Class);
+                List<string> words = DividingFileIntoWords(newPath);
+                string[] wordsArray = words.ToArray();
+                FeelExcelWithNewResumeWords(DataBaseForClassification_ExcelFile, wordsArray, item.Class);
             }
-            
+
         }
+
 
     }
 }

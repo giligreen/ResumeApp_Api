@@ -25,7 +25,7 @@ namespace BL
             Path = path;
             AttributesValuesDict = new Dictionary<string, string>();
             //הוספת התכונות בעץ למילון יחד עם הערך 0  כרגע
-            var wbook = new XLWorkbook(@"M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\Model\DecisionTree.xlsx");
+            var wbook = new XLWorkbook(@"M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\Model\smallTree.xlsx");
             var db = wbook.Worksheet(1);
             var rows = db.RowsUsed().Count();
             for (int i = 2; i < rows; i++)
@@ -50,19 +50,18 @@ namespace BL
         }
 
         /// <summary>
-        /// פונקציה שעוברת וממלאה את המילון של תכונות הקו"ח באפסים או אחדות ע"פ מערך המילים שלו
+        /// פונקציה שעוברת וממלאה את המילון של תכונות הקו"ח
+        /// באפסים או אחדות ע"פ מערך המילים שלו
         /// </summary>
         public void FillDictionary()
         {
             List<string> keys = new List<string>(AttributesValuesDict.Keys);
             foreach (string key in keys)
             {
-
-                if (this.WordArr.Any(x => x == key))
+                if (this.WordArr.Any(x => x.ToUpper() == key.ToUpper()))
                 {
                     this.AttributesValuesDict[key] = "1";
                 }
-
             }
         }
     }

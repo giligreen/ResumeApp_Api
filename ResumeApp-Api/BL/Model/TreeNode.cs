@@ -8,25 +8,16 @@ using System.Threading.Tasks;
 namespace BL
 {
     public class TreeNode
-    { 
-        //משמש למספור הצמתים
-        static int index = 0;
-
+    {
+        static int index = 0; //משמש למספור הצמתים
         public int Id { get; set; }
         public string Name { get; set; }
-
         public string Edge { get; set; }
-
         public MyAttribute NodeAttribute { get; set; }
-
         public List<TreeNode> ChildNodes { get; set; }
-
         public int TableIndex { get; set; }
-
         public bool IsLeaf { get; set; }
-
         public TreeNode() { }
-
         public TreeNode(string name, int tableIndex, MyAttribute nodeAttribute, string edge)
         {
             Id = index++;
@@ -36,7 +27,6 @@ namespace BL
             ChildNodes = new List<TreeNode>();
             Edge = edge;
         }
-
         public TreeNode(bool isleaf, string name, string edge)
         {
             Id = index++;

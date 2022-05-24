@@ -32,3 +32,6 @@ M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\obj\Deb
 M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\obj\Debug\netcoreapp3.1\BL.pdb
 M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\obj\Debug\netcoreapp3.1\BL.genruntimeconfig.cache
 M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\obj\Debug\netcoreapp3.1\BL.csprojAssemblyReference.cache
+M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\bin\Debug\netcoreapp3.1\DAL.exe
+M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\bin\Debug\netcoreapp3.1\DAL.dll
+M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\bin\Debug\netcoreapp3.1\DAL.pdb

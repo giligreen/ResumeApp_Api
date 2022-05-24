@@ -1460,6 +1460,21 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Aspose.Words": "22.5.0",
+          "ClosedXML": "0.95.4",
+          "ClosedXML_Excel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DAL.dll": {}
+        }
       }
     }
   },
@@ -5296,13 +5311,19 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "DAL/1.0.0": {
+      "type": "project",
+      "path": "../DAL/DAL.csproj",
+      "msbuildProject": "../DAL/DAL.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Aspose.Words >= 22.5.0",
       "ClosedXML >= 0.95.4",
-      "ClosedXML_Excel >= 1.0.0"
+      "ClosedXML_Excel >= 1.0.0",
+      "DAL >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5330,7 +5351,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "M:\\פרוייקט\\GIT פרוייקט עם\\ResumeApp_Api\\ResumeApp-Api\\DAL\\DAL.csproj": {
+              "projectPath": "M:\\פרוייקט\\GIT פרוייקט עם\\ResumeApp_Api\\ResumeApp-Api\\DAL\\DAL.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
