@@ -18,6 +18,9 @@ namespace BL
             r.WordArr = DividingFileIntoWords(newPath).ToArray();
             r.FillDictionary();
             ResumeClassifier.ClassifyResume(r);
+            //מחיקת קובץ הטקסט
+            var doc = new Document(newPath);
+            doc.Remove();
             return r;
         }
         public static void SaveResumeInDB(Resume r)

@@ -25,7 +25,7 @@ namespace BL
             Path = path;
             AttributesValuesDict = new Dictionary<string, string>();
             //הוספת התכונות בעץ למילון יחד עם הערך 0  כרגע
-            var wbook = new XLWorkbook(@"M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\Model\smallTree.xlsx");
+            var wbook = new XLWorkbook(@"M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\BL\Model\newTree.xlsx");
             var db = wbook.Worksheet(1);
             var rows = db.RowsUsed().Count();
             for (int i = 2; i < rows; i++)

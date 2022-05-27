@@ -38,26 +38,27 @@ namespace ResumeApp_Api.Controllers
                 await file.CopyToAsync(stream);
             }
             Resume r = AddingResume.BuildNewResume(uniqueFilePath);
+         
             //////DB - שמירה בקובץ ה
             AddingResume.SaveResumeInDB(r);
-           return Ok($"Saved file {originalFileName} with size {file.Length / 1024m:#.00} KB, using unique name {uniqueFilePath}");
-
+            return Ok($"Saved file {originalFileName} with size {file.Length / 1024m:#.00} KB, using unique name {uniqueFilePath}");
         }
 
 
-        
-        [HttpGet("{subject}")]
-        public string SearchBySubject(string subject)
-        {
-            string files = Search.SearchBySubject(subject);
-            return files;
-        }
 
-     
-        [HttpGet("download")]
-        public IActionResult DownloadResume()
-        {
-            byte[] byteArray = System.IO.File.ReadAllBytes(@"M:\פרוייקט\GIT פרוייקט עם\ResumeApp_Api\ResumeApp-Api\ResumeApp-Api\my_files\0f1soscv.pdf");
+        //[HttpGet("{subject}")]
+        //public string SearchBySubject(string subject)
+        //{
+        //    string files = Search.SearchBySubject(subject);
+        //    return files;
+        //}
+
+
+
+        [HttpGet("download/{subject}")]
+        public IActionResult DownloadResume(string subject)
+       {
+            byte[] byteArray = Search.SearchBySubject(subject);
             
             return new FileContentResult(byteArray, "application/pdf");
         }
