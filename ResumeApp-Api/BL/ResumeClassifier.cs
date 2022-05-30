@@ -7,7 +7,6 @@ namespace BL
 {
     class ResumeClassifier
     {
-
         public static string ClassifyResume(Resume r)
         {
             //פעם ראשונה - טעינת העץ מהקובץ

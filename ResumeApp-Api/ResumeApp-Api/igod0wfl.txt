@@ -1,151 +1,0 @@
-﻿
-Evaluation Only. Created with Aspose.Words. Copyright 2003-2022 Aspose Pty Ltd.
-
-
-
-
-
-
-
-
-
-  process management 
-c 
-pid
-include <stdio.h include <stdlib.h include <sys/types.h
-void main 
-pid_t id1,id2 int status id1=fork
-if (id1<0) 
-printf ("err") else 
-if (id1>0) 
-printf ("i'm the grandfather and my id is:%d,and my father id 
-is:%d\n",getpid(),getppid()) wait(NULL) 
-else 
-sleep
-printf("i'm the father and my id is:%d,and my father id is :%d\n",getpid(),getppid()) 
-id2=fork
-if (id2==0) 
-printf ("i'm the grandchild  and my id is:%d and my father idis %d\n", getpid(),getppid()) 
-
-shell
-shell Prompt  string  Parser 
- exec 
- shell prompt  
-Parser 
-void  parse(char *line, char **argv) 
-{ 
-     while (*line != '\0') {     /* if not the end of line ....... */  
-          while (*line == ' ' || *line == '\t' || *line == '\n') 
-               *line++ = '\0';   /* replace white spaces with 0    */ 
-          *argv++ = line;        /* save the argument position     */           while (*line != '\0' && *line != ' ' &&  
-                 *line != '\t' && *line != '\n')  
-               line++;           /* skip the argument until ...    */ 
-     } 
-     *argv = '\0';               /* mark the end of argument list  */ } 
-
-
-
- 
-#include  <stdio.h> #include  <sys/types.h> void  parse(char *line, char **argv) { while (*line != '\0') {       /* if not the end of line ....... */  while (*line == ' ' || *line == '\t' || *line == '\n') *line++ = '\0';     /* replace white spaces with 0    */ *argv++ = line;          /* save the argument position     */ while (*line != '\0' && *line != ' ' &&  *line != '\t' && *line != '\n')  line++;             /* skip the argument until ...    */ } *argv = '\0';                 /* mark the end of argument list  */ } void  execute(char **argv) { pid_t  pid; int    status; if ((pid = fork()) < 0) {     /* fork a child process           */ printf("*** ERROR: forking child process failed\n"); exit(1); } else if (pid == 0) {          /* for the child process:         */ if (execvp(*argv, argv) < 0) {     /* execute the command  */ printf("*** ERROR: exec failed\n"); exit(1); } } else {                                  /* for the parent:      */ while (wait(&status) != pid)       /* wait for completion  */ ; } } void  main(void) { char  line[1024];             /* the input line                 */ char  *argv[64];              /* the command line argument      */ while (1) {                   /* repeat until done ....         */ printf("Shell -> ");     /*   display a prompt             */ gets(line);              /*   read in the command line     */ printf("\n"); parse(line, argv);       /*   parse the line               */ if (strcmp(argv[0], "exit") == 0)  /* is it an "exit"?     */ exit(0);            /*   exit if it is                */ execute(argv);           /* otherwise, execute the command */ } } 
-
-Created with an evaluation copy of Aspose.Words. To discover the full versions of our APIs please visit: https://products.aspose.com/words/
-
-
-C  1
- Int main()
- {
-  int a=4; 
-  int *b=&a;   //  assume address of variable 'a' is 1234   printf ("start: %d, %d, %d, %d\n", a, &a, *b, b);
-  pid_t pid = fork(); // assume fork() succeeds
-  if (pid==0)
-  {
- *b=5
-sleep(5);
-printf ("child: %d, %d, %d, %d\n", a, &a, *b, b);
-
-else   {
-  sleep(1);
-  a+=2;
-  sleep(10)
-printf ("father: %d, %d, %d, %d\n", a, &a, *b, b);
-
-printf ("end: %d, %d, %d, %d\n", a, &a, *b, b);   return 0;}
-
-  1   2   3   4
-  1   2   3   4
-
-
-Created with an evaluation copy of Aspose.Words. To discover the full versions of our APIs please visit: https://products.aspose.com/words/
-
-
-  c  2
- Int main()
- {
-       int month=3;
-        int year=2015;
-        printf ("address of variables: %d, %d\n", &month ,&year);         pid_t pid = fork();
-        if ( pid == 0)
-{
-Month++;
-        Printf ("address of variables: %d, %d\n", &month ,&year);  Execv("/bin/cal","bin/cal,month,year");
- Printf ("address of variables: %d, %d\n", &month ,&year);
- }
- Else
- {
- Month--;
- printf("address of variables: %d, %d\n", &month ,&year);
- }
- Printf ("address of variables: %d, %d\n", &month ,&year);
- Return 0;
- }
-exec() fork()  1 exec() fork()  2
-exec() fork()  3
-
-
-  1   2   3   4
-(Process Control Block PCB
- (Dispatching)  1  (Ready/Active)  2
- (Suspend)  3   (Long Term Schedular)  4
-  blocked/waiting  running  1   ready  2
-  3
-  4
-scheduling 
- Context switch  1   DeadLock  2
-  Suspend  3   Blocked  4
-  1 CPU  2   3
-  4
-
-Created with an evaluation copy of Aspose.Words. To discover the full versions of our APIs please visit: https://products.aspose.com/words/
-
-
-PCB- Process control Block
-  1 Program Counter) PC  2
-  3
-PC  4
-  PCB 
-
-Created with an evaluation copy of Aspose.Words. To discover the full versions of our APIs please visit: https://products.aspose.com/words/
-
-
- Program counter  1
-  2   3
-  4
-
-  PPID
-  1   2   3
-  4
-p2 p1 p2 p1
-p2 p1  1 p1 p2  2
-p2 p1 p2  3 p2 p1  4
-P solaris  P p
- P
-P
-P
-P init child- parent P 
-  :
- main()
- {
- char *argv[]={"date",null};  execv("/bin/date",argv);
-This document was truncated here because it was created in the Evaluation Mode.
-Created with an evaluation copy of Aspose.Words. To discover the full versions of our APIs please visit: https://products.aspose.com/words/
-

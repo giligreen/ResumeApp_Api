@@ -18,9 +18,7 @@ namespace BL
             r.WordArr = DividingFileIntoWords(newPath).ToArray();
             r.FillDictionary();
             ResumeClassifier.ClassifyResume(r);
-            //מחיקת קובץ הטקסט
-            var doc = new Document(newPath);
-            doc.Remove();
+           
             return r;
         }
         public static void SaveResumeInDB(Resume r)
@@ -45,7 +43,7 @@ namespace BL
         public static string ConvertFileToTextFile(String FilePath)
         {
             var doc = new Document(FilePath);
-            string newPath = Path.GetFileNameWithoutExtension(FilePath) + ".txt";
+            string newPath = @"my_files/text_files/"+Path.GetFileNameWithoutExtension(FilePath) + ".txt";
             doc.Save(newPath);
             return newPath;
         }

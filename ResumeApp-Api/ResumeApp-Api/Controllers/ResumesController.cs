@@ -25,23 +25,23 @@ namespace ResumeApp_Api.Controllers
                 return BadRequest("Empty file");       
             //הסר כל מפרטי נתיב 
             var originalFileName = Path.GetFileName(file.FileName);
-
+            var uniqueFileName = Path.Combine(@"my_files\", originalFileName);
             //צור נתיב קובץ ייחודי
-            var uniqueFileName = Path.GetRandomFileName();
-            uniqueFileName= Path.GetFileNameWithoutExtension(uniqueFileName);
-            uniqueFileName +=Path.GetExtension(originalFileName);
-            var uniqueFilePath = Path.Combine(@"my_files\", uniqueFileName);
+            //var uniqueFileName = Path.GetRandomFileName();
+            //uniqueFileName= Path.GetFileNameWithoutExtension(uniqueFileName);
+            //uniqueFileName +=Path.GetExtension(originalFileName);
+            //var uniqueFilePath = Path.Combine(@"my_files\", uniqueFileName);
 
             //שמור את הקובץ
-            using (var stream = System.IO.File.Create(uniqueFilePath))
+            using (var stream = System.IO.File.Create(uniqueFileName))
             {
                 await file.CopyToAsync(stream);
             }
-            Resume r = AddingResume.BuildNewResume(uniqueFilePath);
+            Resume r = AddingResume.BuildNewResume(uniqueFileName);
          
             //////DB - שמירה בקובץ ה
             AddingResume.SaveResumeInDB(r);
-            return Ok($"Saved file {originalFileName} with size {file.Length / 1024m:#.00} KB, using unique name {uniqueFilePath}");
+            return Ok($"Saved file {originalFileName} with size {file.Length / 1024m:#.00} KB, using unique name {uniqueFileName}");
         }
 
 
@@ -59,8 +59,13 @@ namespace ResumeApp_Api.Controllers
         public IActionResult DownloadResume(string subject)
        {
             byte[] byteArray = Search.SearchBySubject(subject);
-            
-            return new FileContentResult(byteArray, "application/pdf");
+            if (byteArray != null)
+            {
+                return new FileContentResult(byteArray, "application/pdf");
+            }
+            else
+                return StatusCode(500);
+
         }
 
 
