@@ -46,27 +46,33 @@ namespace ResumeApp_Api.Controllers
 
 
 
-        //[HttpGet("{subject}")]
-        //public string SearchBySubject(string subject)
+        //[HttpGet("search/{subject}")]
+        //public IActionResult SearchResume(string subject)
         //{
-        //    string files = Search.SearchBySubject(subject);
-        //    return files;
+
+        //    byte[] byteArray = Search.SearchBySubject(subject);
+        //    if (byteArray != null)
+        //    {
+        //        return new FileContentResult(byteArray, "application/pdf");
+        //    }
+        //    else
+        //        return StatusCode(500);
         //}
 
+        [HttpGet("search/{subject}")]
+        public ActionResult<string[]> SearchResume(string subject)
+        {
 
-
-        [HttpGet("download/{subject}")]
-        public IActionResult DownloadResume(string subject)
-       {
-            byte[] byteArray = Search.SearchBySubject(subject);
-            if (byteArray != null)
+            List<string> files = Search.SearchBySubject(subject);
+            if (files.Count() > 0)
             {
-                return new FileContentResult(byteArray, "application/pdf");
+                string[] filesArray = files.ToArray();
+                return filesArray;
             }
             else
                 return StatusCode(500);
-
         }
+
 
 
 

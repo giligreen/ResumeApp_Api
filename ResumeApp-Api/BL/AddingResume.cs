@@ -72,6 +72,7 @@ namespace BL
             string text = ReadAllTextFromFile(filePath);
 
             string cleantext = Regex.Replace(text, "[^A-Za-z +#א-ת]", " ").TrimStart().TrimEnd();
+          
             List<string> words = new List<string>();
             char[] charsToSplit = new char[2];
             charsToSplit[0] = ' ';

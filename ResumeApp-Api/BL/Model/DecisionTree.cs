@@ -450,38 +450,45 @@ namespace BL
             }
         }
 
-     
+      
         public static TreeNode LoadTreeFromFile(string path)
         {
             var wbook = new XLWorkbook(path);
             var ws = wbook.Worksheet(1);
             staticRow = 1;
-            TreeNode root= RecToLoadTreeFromFile(ws);
+            TreeNode root = RecToLoadTreeFromFile(ws);
             return root;
         }
 
-        public static  TreeNode RecToLoadTreeFromFile(IXLWorksheet ws)
+        public static TreeNode RecToLoadTreeFromFile(IXLWorksheet ws)
         {
             staticRow++;
-            if (staticRow <=ws.RowsUsed().Count())
+            if (staticRow <= ws.RowsUsed().Count())
             {
-            TreeNode newNode = new TreeNode();
-            newNode.Id =Convert.ToInt32( ws.Cell(staticRow, 1).Value);
-            newNode.Name = ws.Cell(staticRow, 2).Value.ToString();
-            newNode.Edge = ws.Cell(staticRow, 3).Value.ToString();
-            newNode.IsLeaf =Convert.ToBoolean( ws.Cell(staticRow, 4).Value);
-            newNode.TableIndex = Convert.ToInt32(ws.Cell(staticRow, 5).Value);
-            if (!newNode.IsLeaf) {
-                newNode.ChildNodes = new List<TreeNode>();
-               newNode.ChildNodes.Add(RecToLoadTreeFromFile(ws));
-               newNode.ChildNodes.Add(RecToLoadTreeFromFile(ws));
-            }
-           
-            return newNode;
+
+                TreeNode newNode = new TreeNode();
+                newNode.Id = Convert.ToInt32(ws.Cell((int)staticRow, 1).Value);
+                newNode.Name = ws.Cell((int)staticRow, 2).Value.ToString();
+                newNode.Edge = ws.Cell((int)staticRow, 3).Value.ToString();
+                newNode.IsLeaf = Convert.ToBoolean(ws.Cell((int)staticRow, 4).Value);
+                newNode.TableIndex = Convert.ToInt32(ws.Cell((int)staticRow, 5).Value);
+                if (!newNode.IsLeaf)
+                {
+                    newNode.ChildNodes = new List<TreeNode>();
+                    newNode.ChildNodes.Add(RecToLoadTreeFromFile(ws));
+                    newNode.ChildNodes.Add(RecToLoadTreeFromFile(ws));
+                    if (newNode.ChildNodes[1] == null)
+                    {
+                        newNode.ChildNodes.RemoveAt(1);
+                        newNode.ChildNodes.Add ( new TreeNode(true, "CompPrograming", ws.Cell((int)staticRow, 3).GetValue<string>() == "0" ? "1" : "0"));
+                    }
+                }
+
+                return newNode;
             }
             return null;
         }
 
-      
-    } 
+
+    }
 }
