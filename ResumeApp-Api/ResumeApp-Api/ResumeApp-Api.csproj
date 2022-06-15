@@ -9,6 +9,7 @@
     <PackageReference Include="Aspose.Words" Version="22.5.0" />
     <PackageReference Include="ClosedXML" Version="0.95.4" />
     <PackageReference Include="ClosedXML_Excel" Version="1.0.0" />
+    <PackageReference Include="HebrewNLP.NET" Version="1.8.2" />
   </ItemGroup>
 
   <ItemGroup>

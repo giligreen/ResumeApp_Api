@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cnFtjA58dqXBW9LfSHvkd3qZ22dFOBA1uoTtK1TMqBqg8x5S8bvt+a2OOdoqXNOOuC7NsqItnu0KIhrY/Gv8Aw==",
+  "dgSpecHash": "FzJMsZ2qONQU8Wf/t8Sda9O7ZtXS2QHazLgutFJ8K5sfNhjZy9vIFD1jtJPMkIZY2VWgTXR3x7catBfUBJirAA==",
   "success": true,
   "projectFilePath": "M:\\פרוייקט\\GIT פרוייקט עם\\ResumeApp_Api\\ResumeApp-Api\\ResumeApp-Api\\ResumeApp-Api.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\324851419\\.nuget\\packages\\closedxml_excel\\1.0.0\\closedxml_excel.1.0.0.nupkg.sha512",
     "C:\\Users\\324851419\\.nuget\\packages\\documentformat.openxml\\2.7.2\\documentformat.openxml.2.7.2.nupkg.sha512",
     "C:\\Users\\324851419\\.nuget\\packages\\excelnumberformat\\1.0.10\\excelnumberformat.1.0.10.nupkg.sha512",
+    "C:\\Users\\324851419\\.nuget\\packages\\hebrewnlp.net\\1.8.2\\hebrewnlp.net.1.8.2.nupkg.sha512",
     "C:\\Users\\324851419\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\324851419\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\324851419\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
@@ -16,6 +17,7 @@
     "C:\\Users\\324851419\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\324851419\\.nuget\\packages\\microsoft.win32.systemevents\\4.5.0\\microsoft.win32.systemevents.4.5.0.nupkg.sha512",
     "C:\\Users\\324851419\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
+    "C:\\Users\\324851419\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\324851419\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\324851419\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\324851419\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

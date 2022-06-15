@@ -72,6 +72,18 @@
           "lib/netstandard2.0/ExcelNumberFormat.dll": {}
         }
       },
+      "HebrewNLP.NET/1.8.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/HebrewNLP.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/HebrewNLP.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
@@ -198,6 +210,15 @@
           "System.Threading.Timer": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XDocument": "4.3.0"
+        }
+      },
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -1597,6 +1618,18 @@
         "lib/netstandard2.0/ExcelNumberFormat.xml"
       ]
     },
+    "HebrewNLP.NET/1.8.2": {
+      "sha512": "DKZspIKD9pH6hzQHYNqXI4wJPb7puvhVYhyQuzVgYM3sw6emcMDqweFQd0b+0Zu47Lonn1MGZUc+JbBKUpMSTg==",
+      "type": "package",
+      "path": "hebrewnlp.net/1.8.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "hebrewnlp.net.1.8.2.nupkg.sha512",
+        "hebrewnlp.net.nuspec",
+        "lib/netstandard2.0/HebrewNLP.dll"
+      ]
+    },
     "Microsoft.CSharp/4.7.0": {
       "sha512": "pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
       "type": "package",
@@ -1814,6 +1847,36 @@
         "dotnet_library_license.txt",
         "netstandard.library.1.6.1.nupkg.sha512",
         "netstandard.library.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/11.0.2": {
+      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "type": "package",
+      "path": "newtonsoft.json/11.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.11.0.2.nupkg.sha512",
+        "newtonsoft.json.nuspec"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -5345,7 +5408,8 @@
       "BL >= 1.0.0",
       "ClosedXML >= 0.95.4",
       "ClosedXML_Excel >= 1.0.0",
-      "DAL >= 1.0.0"
+      "DAL >= 1.0.0",
+      "HebrewNLP.NET >= 1.8.2"
     ]
   },
   "packageFolders": {
@@ -5403,6 +5467,10 @@
           "ClosedXML_Excel": {
             "target": "Package",
             "version": "[1.0.0, )"
+          },
+          "HebrewNLP.NET": {
+            "target": "Package",
+            "version": "[1.8.2, )"
           }
         },
         "imports": [
@@ -5423,7 +5491,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.419\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.420\\RuntimeIdentifierGraph.json"
       }
     }
   },
